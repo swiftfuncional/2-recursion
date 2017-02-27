@@ -1,4 +1,4 @@
-enum List<T> {
+indirect enum List<T> {
 	case Empty
-	indirect case NonEmpty(head: T, tail: List<T>)
+	case NonEmpty(head: T, tail: List<T>)
 }
