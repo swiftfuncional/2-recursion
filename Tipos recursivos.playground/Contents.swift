@@ -10,6 +10,6 @@ func totalCost(items: List<Int>) -> Int {
 	case .Empty:
 		return 0
 	case let .NonEmpty(head, tail):
-
+		return head + totalCost(items: tail)
 	}
 }
