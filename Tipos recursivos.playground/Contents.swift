@@ -3,7 +3,13 @@ indirect enum List<T> {
 	case NonEmpty(head: T, tail: List<T>)
 }
 
-let cart = [4, 5, 7, 83, 3, 4]
+let cart = List.NonEmpty(
+	head: 4, tail: List.NonEmpty(
+		head: 5, tail: List.NonEmpty(
+			head: 7, tail: List.NonEmpty(
+				head: 83, tail: List.NonEmpty(
+					head: 3, tail: List.NonEmpty(
+						head: 4, tail: List.Empty))))))
 
 func totalCost(items: List<Int>) -> Int {
 	switch items {
