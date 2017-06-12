@@ -11,17 +11,13 @@ let cart = List.NonEmpty(
 					head: 3, tail: List.NonEmpty(
 						head: 4, tail: List.Empty))))))
 
-func totalCost(items: List<Int>) -> Int {
-	func totalCost(items: List<Int>, accumulator: Int) -> Int {
-		switch items {
-		case .Empty:
-			return accumulator
-		case let .NonEmpty(head, tail):
-			return totalCost(items: tail, accumulator: head + accumulator)
-		}
+func totalCost(items: List<Int>, accumulator: Int = 0) -> Int {
+    switch items {
+    case .Empty:
+		return accumulator
+	case let .NonEmpty(head, tail):
+		return totalCost(items: tail, accumulator: head + accumulator)
 	}
-
-	return totalCost(items: cart, accumulator: 0)
 }
 
 
